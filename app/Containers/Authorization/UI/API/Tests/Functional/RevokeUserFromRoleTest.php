@@ -30,9 +30,9 @@ class RevokeUserFromRoleTest extends ApiTestCase
      */
     public function testRevokeUserFromRole_()
     {
-        $roleA = factory(Role::class)->create();
+        $roleA = Role::factory()->create();
 
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
         $randomUser->assignRole($roleA);
 
         $data = [
@@ -61,9 +61,9 @@ class RevokeUserFromRoleTest extends ApiTestCase
      */
     public function testRevokeUserFromRoleWithRealId_()
     {
-        $roleA = factory(Role::class)->create();
+        $roleA = Role::factory()->create();
 
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
         $randomUser->assignRole($roleA);
 
         $data = [
@@ -93,10 +93,10 @@ class RevokeUserFromRoleTest extends ApiTestCase
      */
     public function testRevokeUserFromManyRoles_()
     {
-        $roleA = factory(Role::class)->create();
-        $roleB = factory(Role::class)->create();
+        $roleA = Role::factory()->create();
+        $roleB = Role::factory()->create();
 
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
         $randomUser->assignRole($roleA);
         $randomUser->assignRole($roleB);
 

@@ -31,9 +31,9 @@ class AssignUserToRoleTest extends ApiTestCase
      */
     public function testAssignUserToRole_()
     {
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
 
-        $role = factory(Role::class)->create();
+        $role = Role::factory()->create();
 
         $data = [
             'roles_ids' => [$role->getHashedKey()],
@@ -58,9 +58,9 @@ class AssignUserToRoleTest extends ApiTestCase
      */
     public function testAssignUserToRoleWithRealId_()
     {
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
 
-        $role = factory(Role::class)->create();
+        $role = Role::factory()->create();
 
         $data = [
             'roles_ids' => [$role->id], // testing against real ID's
@@ -88,10 +88,10 @@ class AssignUserToRoleTest extends ApiTestCase
      */
     public function testAssignUserToManyRoles_()
     {
-        $randomUser = factory(User::class)->create();
+        $randomUser = User::factory()->create();
 
-        $role1 = factory(Role::class)->create();
-        $role2 = factory(Role::class)->create();
+        $role1 = Role::factory()->create();
+        $role2 = Role::factory()->create();
 
         $data = [
             'roles_ids' => [
