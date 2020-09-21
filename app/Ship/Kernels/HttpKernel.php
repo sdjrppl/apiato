@@ -28,7 +28,7 @@ class HttpKernel extends LaravelHttpKernel
     protected $middleware = [
         // Laravel middleware's
         \App\Ship\Middlewares\Http\TrimStrings::class,
-        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Ship\Middlewares\Http\TrustProxies::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
