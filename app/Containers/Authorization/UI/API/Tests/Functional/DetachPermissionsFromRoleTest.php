@@ -29,9 +29,9 @@ class DetachPermissionsFromRoleTest extends ApiTestCase
      */
     public function testDetachSinglePermissionFromRole_()
     {
-        $permissionA = factory(Permission::class)->create();
+        $permissionA = Permission::factory()->create();
 
-        $roleA = factory(Role::class)->create();
+        $roleA = Role::factory()->create();
         $roleA->givePermissionTo($permissionA);
 
         $data = [
@@ -59,10 +59,10 @@ class DetachPermissionsFromRoleTest extends ApiTestCase
      */
     public function testDetachMultiplePermissionFromRole_()
     {
-        $permissionA = factory(Permission::class)->create();
-        $permissionB = factory(Permission::class)->create();
+        $permissionA = Permission::factory()->create();
+        $permissionB = Permission::factory()->create();
 
-        $roleA = factory(Role::class)->create();
+        $roleA = Role::factory()->create();
         $roleA->givePermissionTo($permissionA);
         $roleA->givePermissionTo($permissionB);
 
